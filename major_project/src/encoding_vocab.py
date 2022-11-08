@@ -4,7 +4,7 @@ import pandas as pd
 import re
 
 embedding_dim = 300
-df = pd.read_csv('csic_database.csv')
+df = pd.read_csv('../data/csic_database.csv')
 data_df = df.loc[0:,["URL","content","classification"]]
 data_df["URL"]= data_df["URL"].apply( lambda x : x.split()[0] )
 data_df["content"]= data_df["content"].apply( lambda x : None if pd.isna(x) else x )
@@ -101,7 +101,7 @@ def embedding_for_vocab(filepath, word_index,
     return embedding_matrix_vocab
 
 
-embedding_matrix_vocab = embedding_for_vocab('./glove.42B.300d.txt', vocab ,embedding_dim)
+embedding_matrix_vocab = embedding_for_vocab('../data/glove.42B.300d.txt', vocab ,embedding_dim)
 
 
 
