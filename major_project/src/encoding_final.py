@@ -3,7 +3,7 @@ import re
 import numpy as np
 
 
-df = pd.read_csv('csic_database.csv')
+df = pd.read_csv('../data/csic_database.csv')
 data_df = df.loc[0:,["URL","content","classification"]]
 data_df["URL"]= data_df["URL"].apply( lambda x : x.split()[0] )
 data_df["content"]= data_df["content"].apply( lambda x : None if pd.isna(x) else x )
