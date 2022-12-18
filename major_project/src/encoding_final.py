@@ -3,7 +3,7 @@ import re
 import numpy as np
 
 
-df = pd.read_csv('../data/csic_database.csv')
+df = pd.read_csv('csic_database.csv')
 data_df = df.loc[0:,["URL","content","classification"]]
 data_df["URL"]= data_df["URL"].apply( lambda x : x.split()[0] )
 data_df["content"]= data_df["content"].apply( lambda x : None if pd.isna(x) else x )
@@ -80,7 +80,7 @@ for item in token_dict:
 inverse_vocab = {index: token for token, index in vocab.items()}
 
 
-vectors_df = pd.read_csv('vectors_final.tsv', sep = '\t', header = None)
+vectors_df = pd.read_csv('vectors_WithVariables.tsv', sep = '\t', header = None)
 
 def generate_embedding(index):
     vector = sequence_df.iloc[index]
