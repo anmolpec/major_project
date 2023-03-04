@@ -79,8 +79,8 @@ for item in token_dict:
 
 inverse_vocab = {index: token for token, index in vocab.items()}
 
-metadata_df = pd.read_csv('metadata_WithVariables.tsv', sep = '\t', header = None)
-vectors_df = pd.read_csv('vectors_WithVariables.tsv', sep = '\t', header = None)
+metadata_df = pd.read_csv('../data/metadata_WithVariables.tsv', sep = '\t', header = None)
+vectors_df = pd.read_csv('../data/vectors_WithVariables.tsv', sep = '\t', header = None)
 
 def generate_embedding(index):
     vector = sequence_df.iloc[index]
